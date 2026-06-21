@@ -1,99 +1,283 @@
-# Auto Typer
+# Exwhyzed Typer Pro
 
-A Windows application that simulates keyboard typing to help you paste text into applications that don't allow copy/paste (like when using Chrome Remote Desktop).
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-00C853?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <h3 align="center">Professional Automated Input Engine</h3>
+  <p align="center">
+    A modern cybersecurity-inspired auto typing utility built with Python.
+  </p>
+</p>
+
+---
+
+## Overview
+
+Exwhyzed Typer Pro is a professional automated typing utility designed for developers, cybersecurity professionals, trainers, students, and presenters.
+
+The application simulates real keyboard input while preserving formatting, syntax, indentation, special characters, and code structure exactly as provided.
+
+Whether you're demonstrating source code during a screen-sharing session, presenting technical content, teaching programming concepts, or automating repetitive typing tasks, Exwhyzed Typer Pro delivers accurate and reliable results.
+
+---
 
 ## Features
 
-- **Modern, Beautiful UI**: Professional-looking interface with intuitive design
-- **Configurable Countdown**: Set your own countdown time (0-60+ seconds) before typing starts
-- **Configurable typing speed**: Adjust the delay between characters
-- **Pause/Resume**: Pause typing anytime and resume when ready (F9 hotkey or button)
-- **Stop anytime**: Press ESC key to stop typing at any time
-- **Progress tracking**: Real-time progress bar showing typing progress and character count
-- **Character counter**: See how many characters are in your text (with thousands separator)
-- **Multi-line support**: Handles code, paragraphs, and formatted text
-- **Visual status indicators**: Color-coded status messages for different states
-- **Hotkeys**: 
-  - **ESC** = Stop typing
-  - **F9** = Pause/Resume typing
+* Modern Cybersecurity-Themed Interface
+* Configurable Typing Speed
+* Adjustable Countdown Timer
+* Real-Time Progress Tracking
+* Pause & Resume Functionality
+* Emergency Stop Hotkey
+* Character Statistics
+* Multi-Threaded Typing Engine
+* Syntax-Preserving Typing
+* Screen Sharing Compatible
+* Automatic Special Character Handling
+* Lightweight & Fast
+
+---
+
+## Advanced Capabilities
+
+### Screen Sharing Compatible
+
+Unlike clipboard-based automation tools, Exwhyzed Typer Pro performs actual keyboard simulation.
+
+This allows it to work reliably during:
+
+* Google Meet
+* Zoom
+* Microsoft Teams
+* Discord Screen Share
+* Remote Desktop Sessions
+* Virtual Machines
+* Online Demonstrations
+* Technical Presentations
+
+### Syntax-Preserving Typing
+
+The application types exactly what you provide.
+
+Supported content includes:
+
+* Python
+* JavaScript
+* HTML
+* CSS
+* SQL
+* JSON
+* YAML
+* Configuration Files
+* Documentation
+* Plain Text
+
+Special characters are handled correctly:
+
+```text
+{} [] () <> "" '' `` ~ ! @ # $ % ^ & * _
+```
+
+This ensures that code snippets, payloads, commands, and configuration files remain identical to the original source.
+
+---
+
+## Perfect For
+
+* Cybersecurity Demonstrations
+* Live Coding Sessions
+* Technical Workshops
+* Classroom Training
+* Screen Sharing Sessions
+* Programming Tutorials
+* Presentation Automation
+* Productivity Automation
+* Code Walkthroughs
+* Learning & Education
+
+---
+
+### Main Interface
+
+Add screenshots inside:
+
+```text
+screenshots/main-ui.png
+```
+
+Example:
+
+```text
+Exwhyzed-Typer-Pro/
+└── screenshots/
+    ├── main-ui.png
+    ├── typing-demo.png
+    └── dashboard.png
+```
+
+---
 
 ## Installation
 
-1. Make sure you have Python 3.7 or higher installed
-2. Install the required dependency:
-   ```
-   pip install -r requirements.txt
-   ```
-   Or directly:
-   ```
-   pip install pynput
-   ```
+### Clone Repository
 
-## Usage
+```bash
+git clone https://github.com/YOUR_USERNAME/Exwhyzed-Typer-Pro.git
 
-1. Run the application:
-   ```
-   python typer.py
-   ```
+cd Exwhyzed-Typer-Pro
+```
 
-2. **Paste your text** into the text area (or type it manually)
-   - Character count is displayed automatically with formatting
+### Install Dependencies
 
-3. **Configure settings**:
-   - **Countdown**: Set how many seconds to wait before typing starts (default: 3 seconds)
-     - Use 0 if you're already on the target window
-     - Use more seconds if you need more time to switch windows
-   - **Typing Speed**: Adjust the delay between characters
-     - Lower values = faster typing (0.01 is very fast)
-     - Higher values = slower typing (0.5 is slow)
-     - Default: 0.05 seconds (comfortable speed)
+```bash
+pip install -r requirements.txt
+```
 
-4. **Click "Start Typing"**
+### Run Application
 
-5. **Switch to your target window** during the countdown
+```bash
+python typer.py
+```
 
-6. The program will start typing automatically with a progress bar showing your progress
-
-7. **Control typing**:
-   - **Press F9** or click "Pause" button to pause/resume typing
-   - **Press ESC** or click "Stop" button to stop typing completely
-   - Watch the progress bar to see how much has been typed
-
-## Tips
-
-- **Countdown timing**: 
-  - Set countdown to 0 if you're already on the target window and ready
-  - Use 5-10 seconds if you need to navigate through multiple windows
-  - The countdown shows exactly how many seconds remain
-- **Typing speed**:
-  - For code with many lines, use a delay of 0.01-0.03 seconds for faster input
-  - For forms or sensitive inputs, use 0.1-0.2 seconds to be safer
-- **Best practices**:
-  - Make sure the target window is active and the cursor is in the text field before typing starts
-  - The program types exactly what you paste, including line breaks and special characters
-  - Use **Pause (F9)** if you need to do something in the target application, then resume when ready
-  - The progress bar shows exactly how much text has been typed, so you know if you need to resume after a pause
-- **UI features**:
-  - Status messages change color to indicate current state (green=ready, blue=typing, orange=paused/countdown, red=stopped)
-  - Character counts use thousands separators for easy reading (e.g., "1,234 characters")
+---
 
 ## Requirements
 
-- Python 3.7+
-- Windows OS (tested on Windows 10)
-- pynput library
+* Python 3.8+
+* Windows Operating System
 
-## Troubleshooting
+Dependencies:
 
-- **Nothing happens when I click Start**: Make sure you've switched to the target window during the countdown (increase countdown time if needed)
-- **Typing is too fast/slow**: Adjust the delay value in the settings
-- **Can't stop typing**: Press the ESC key (it works globally) or click the Stop button
-- **Want to pause temporarily**: Press F9 key or click the Pause button - then resume with F9 again
-- **Installation errors**: Make sure you have admin privileges or try installing with `pip install --user pynput`
-- **Hotkeys not working**: Make sure the application window is running and typing is active (hotkeys work globally, but only when typing)
+```text
+pynput
+```
+
+Install manually:
+
+```bash
+pip install pynput
+```
+
+---
+
+## Usage
+
+### Step 1
+
+Launch Exwhyzed Typer Pro.
+
+### Step 2
+
+Paste or type your content inside the editor.
+
+### Step 3
+
+Configure:
+
+* Countdown Timer
+* Typing Speed
+
+### Step 4
+
+Click:
+
+```text
+▶ START ATTACK
+```
+
+### Step 5
+
+Switch to the target application before the countdown finishes.
+
+### Step 6
+
+Watch Exwhyzed Typer Pro automatically type the content.
+
+---
+
+## Hotkeys
+
+| Key | Action         |
+| --- | -------------- |
+| F9  | Pause / Resume |
+| ESC | Stop Typing    |
+
+---
+
+## Project Structure
+
+```text
+Exwhyzed-Typer-Pro/
+│
+├── typer.py
+├── requirements.txt
+├── README.md
+├── run_typer.bat
+├── screenshots/
+│
+└── __pycache__/
+```
+
+---
+
+## Technical Stack
+
+### Built With
+
+* Python
+* Tkinter
+* Pynput
+* Threading
+
+### Core Components
+
+* Keyboard Event Simulation
+* Progress Monitoring System
+* Countdown Execution Engine
+* Pause / Resume Controller
+* Character Processing Engine
+* Hotkey Management System
+
+---
+
+## Why Exwhyzed Typer Pro?
+
+Many typing tools rely on clipboard pasting, which can fail during demonstrations and presentations.
+
+Exwhyzed Typer Pro simulates actual keyboard input, allowing users to:
+
+* Demonstrate code naturally
+* Present commands live
+* Showcase scripts during screen sharing
+* Automate repetitive typing tasks
+* Maintain formatting accuracy
+
+---
+
+## Disclaimer
+
+This software is intended for educational, productivity, automation, presentation, and demonstration purposes only.
+
+Users are responsible for ensuring compliance with all applicable policies, platform rules, organizational guidelines, and local regulations.
+
+---
 
 ## License
 
-Free to use for personal and commercial purposes.
+MIT License
 
-"# Exwhyzed_Typer_Pro" 
+Feel free to use, modify, and distribute this project in accordance with the license terms.
+
+---
+
+## Author
+
+**Kapil Patel**
+
+Cybersecurity Enthusiast | DFIR | Penetration Testing | Automation
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
