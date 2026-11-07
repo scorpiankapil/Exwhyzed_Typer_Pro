@@ -1,276 +1,270 @@
-KOKO# Exwhyzed Typer Pro
+# Exwhyzed Typer Pro
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-00C853?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
-</p>
+### Professional Automated Input Engine
 
-<p align="center">
-  <h3 align="center">Professional Automated Input Engine</h3>
-  <p align="center">
-    A modern cybersecuritKOy-inspired auto typing utility built with Python.
-  </p>
-</p>
+A modern, Python-based automated typing utility designed for developers, cybersecurity professionals, students, trainers, and technical presenters.
+
+Exwhyzed Typer Pro simulates real keyboard input while preserving text formatting, indentation, syntax, special characters, and code structure.
+
+Whether you're demonstrating code, presenting technical content, conducting training sessions, or automating repetitive typing tasks, Exwhyzed Typer Pro provides a controlled and efficient typing experience.
 
 ---
 
-## Overview
+## What's New in v1.1.0 🚀
 
-Exwhyzed Typer Pro is a professional automated typing utility designed for developers, cybersecurity professionals, trainers, students, and presenters.
+### Smart Manual Input Detection & Auto-Stop
 
-The application simulates real keyboard input while preserving formatting, syntax, indentation, special characters, and code structure exactly as provided.
+Exwhyzed Typer Pro now includes an intelligent manual input detection mechanism.
 
-Whether you're demonstrating source code during a screen-sharing session, presenting technical content, teaching programming concepts, or automating repetitive typing tasks, Exwhyzed Typer Pro delivers accurate and reliable results.
+When a user manually interacts with the keyboard while automated typing is running, the typing engine automatically switches to STOP mode.
+
+**Key Improvements:**
+- Automatic detection of manual keyboard interaction.
+- Automatically stops ongoing typing operations.
+- Prevents unwanted characters and accidental modifications.
+- Gives manual interaction priority over automated typing.
+- Improves control during live demonstrations.
 
 ---
 
 ## Features
 
-* Modern Cybersecurity-Themed Interface
-* Configurable Typing Speed
-* Adjustable Countdown Timer
-* Real-Time Progress Tracking
-* Pause & Resume Functionality
-* Emergency Stop Hotkey
-* Character Statistics
-* Multi-Threaded Typing Engine
-* Syntax-Preserving Typing
-* Screen Sharing Compatible
-* Automatic Special Character Handling
-* Lightweight & Fast
+### Core Features
+
+- Modern Cybersecurity-Themed Interface
+- Configurable Typing Speed
+- Adjustable Countdown Timer
+- Real-Time Typing Progress
+- Pause & Resume Functionality
+- Emergency Stop Hotkey
+- Automatic Manual Input Detection
+- Character Statistics
+- Multi-Threaded Typing Engine
+- Syntax-Preserving Typing
+- Automatic Special Character Handling
+- Lightweight and Fast
+
+### Advanced Capabilities
+
+**1. Smart Manual Input Detection**
+
+Automatically detects manual keyboard interaction and stops the automated typing process to prevent unintended input.
+
+**2. Screen Sharing Compatibility**
+
+Uses actual keyboard simulation instead of clipboard-based pasting.
+
+Designed for demonstrations and presentations involving:
+
+- Google Meet
+- Zoom
+- Microsoft Teams
+- Discord Screen Sharing
+- Remote Desktop Sessions
+- Virtual Machines
+
+**3. Syntax-Preserving Typing**
+
+Preserves the original content structure, including:
+
+- Indentation
+- Line Breaks
+- Special Characters
+- Symbols
+- Programming Syntax
+- Code Formatting
+
+**4. Real-Time Progress Monitoring**
+
+Track typing progress and character statistics while the automation is running.
+
+**5. Pause & Resume**
+
+Temporarily pause and resume automated typing whenever required.
 
 ---
 
-## Advanced Capabilities
+## Supported Content
 
-### Screen Sharing Compatible
+Exwhyzed Typer Pro supports various types of text and programming content:
 
-Unlike clipboard-based automation tools, Exwhyzed Typer Pro performs actual keyboard simulation.
+| Category | Supported Formats |
+|---|---|
+| Programming | Python, JavaScript |
+| Web Development | HTML, CSS |
+| Databases | SQL |
+| Configuration | JSON, YAML |
+| Documentation | Markdown, Plain Text |
+| Other | Commands, Scripts, Payloads |
 
-This allows it to work reliably during:
+Special characters supported include:
 
-* Google Meet
-* Zoom
-* Microsoft Teams
-* Discord Screen Share
-* Remote Desktop Sessions
-* Virtual Machines
-* Online Demonstrations
-* Technical Presentations
-
-### Syntax-Preserving Typing
-
-The application types exactly what you provide.
-
-Supported content includes:
-
-* Python
-* JavaScript
-* HTML
-* CSS
-* SQL
-* JSON
-* YAML
-* Configuration Files
-* Documentation
-* Plain Text
-
-Special characters are handled correctly:
-
-```text
-{} [] () <> "" '' `` ~ ! @ # $ % ^ & * _
-```
-
-This ensures that code snippets, payloads, commands, and configuration files remain identical to the original source.
+`{} [] () <> "" '' \` ~ ! @ # $ % ^ & * _`
 
 ---
 
-## Perfect For
+## Use Cases
 
-* Cybersecurity Demonstrations
-* Live Coding Sessions
-* Technical Workshops
-* Classroom Training
-* Screen Sharing Sessions
-* Programming Tutorials
-* Presentation Automation
-* Productivity Automation
-* Code Walkthroughs
-* Learning & Education
-
----
-
-### Main Interface
-
-Add screenshots inside:
-
-```text
-screenshots/main-ui.png
-```
-
-Example:
-
-```text
-Exwhyzed-Typer-Pro/
-└── screenshots/
-    ├── main-ui.png
-    ├── typing-demo.png
-    └── dashboard.png
-```
+- Cybersecurity Demonstrations
+- Live Coding Sessions
+- Technical Workshops
+- Classroom Training
+- Screen Sharing Sessions
+- Programming Tutorials
+- Presentation Automation
+- Repetitive Typing Automation
+- Code Walkthroughs
+- Educational Demonstrations
 
 ---
 
 ## Installation
 
-### Clone Repository
+### Prerequisites
+
+- Python 3.8 or later
+- Windows Operating System
+- pip package manager
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Exwhyzed-Typer-Pro.git
-
-cd Exwhyzed-Typer-Pro
+git clone https://github.com/scorpiankapil/Exwhyzed_Typer_Pro.git
 ```
 
-### Install Dependencies
+### 2. Navigate to the Project Directory
+
+```bash
+cd Exwhyzed_Typer_Pro
+```
+
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Application
+### 4. Run the Application
 
 ```bash
 python typer.py
 ```
 
----
-
-## Requirements
-
-* Python 3.8+
-* Windows Operating System
-
-Dependencies:
-
-```text
-pynput
-```
-
-Install manually:
+Alternatively, Windows users can launch the application using:
 
 ```bash
-pip install pynput
+run_typer.bat
 ```
 
 ---
 
-## Usage
+## Usage Guide
 
-### Step 1
+**Step 1:** Launch Exwhyzed Typer Pro.
 
-Launch Exwhyzed Typer Pro.
+**Step 2:** Enter or paste your content into the editor.
 
-### Step 2
+**Step 3:** Configure your preferred typing speed and countdown timer.
 
-Paste or type your content inside the editor.
+**Step 4:** Click the START ATTACK button.
 
-### Step 3
+**Step 5:** Switch to your desired target application before the countdown finishes.
 
-Configure:
+**Step 6:** Exwhyzed Typer Pro will automatically simulate keyboard input.
 
-* Countdown Timer
-* Typing Speed
-
-### Step 4
-
-Click:
-
-```text
-▶ START ATTACK
-```
-
-### Step 5
-
-Switch to the target application before the countdown finishes.
-
-### Step 6
-
-Watch Exwhyzed Typer Pro automatically type the content.
+**Step 7:** If you manually interact with the keyboard, the Smart Manual Input Detection mechanism automatically stops the typing process.
 
 ---
 
-## Hotkeys
+## Keyboard Shortcuts
 
-| Key | Action         |
-| --- | -------------- |
-| F9  | Pause / Resume |
-| ESC | Stop Typing    |
+| Shortcut | Action |
+|---|---|
+| F9 | Pause / Resume |
+| ESC | Emergency Stop |
+
+---
+
+## Technical Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Core Programming Language |
+| Tkinter | Graphical User Interface |
+| Pynput | Keyboard Simulation and Input Monitoring |
+| Threading | Concurrent Execution |
+
+### Core Components
+
+- Keyboard Event Simulation
+- Countdown Execution Engine
+- Typing Speed Controller
+- Progress Monitoring System
+- Pause / Resume Controller
+- Emergency Stop Mechanism
+- Manual Input Detection
+- Character Processing Engine
+- Hotkey Management System
 
 ---
 
 ## Project Structure
 
 ```text
-Exwhyzed-Typer-Pro/
+Exwhyzed_Typer_Pro/
 │
 ├── typer.py
 ├── requirements.txt
-├── README.md
 ├── run_typer.bat
+├── README.md
+├── CHANGELOG.md
+├── SECURITY.md
+├── .gitignore
+│
 ├── screenshots/
+│   ├── main-ui.png
+│   ├── typing-demo.png
+│   └── dashboard.png
 │
 └── __pycache__/
 ```
 
 ---
 
-## Technical Stack
-
-### Built With
-
-* Python
-* Tkinter
-* Pynput
-* Threading
-
-### Core Components
-
-* Keyboard Event Simulation
-* Progress Monitoring System
-* Countdown Execution Engine
-* Pause / Resume Controller
-* Character Processing Engine
-* Hotkey Management System
-
----
-
 ## Why Exwhyzed Typer Pro?
 
-Many typing tools rely on clipboard pasting, which can fail during demonstrations and presentations.
+Traditional clipboard-based automation tools may not work reliably in every demonstration or remote desktop environment.
 
-Exwhyzed Typer Pro simulates actual keyboard input, allowing users to:
+Exwhyzed Typer Pro uses keyboard event simulation to provide a more interactive typing experience.
 
-* Demonstrate code naturally
-* Present commands live
-* Showcase scripts during screen sharing
-* Automate repetitive typing tasks
-* Maintain formatting accuracy
+With features like configurable typing speed, real-time progress monitoring, pause/resume controls, and automatic manual-input detection, it offers greater control over automated typing sessions.
 
 ---
 
-## Disclaimer
+## Version History
 
-This software is intended for educational, productivity, automation, presentation, and demonstration purposes only.
+| Version | Updates |
+|---|---|
+| v1.0.0 | Initial release with automated typing functionality |
+| v1.1.0 | Smart Manual Input Detection & Auto-Stop |
 
-Users are responsible for ensuring compliance with all applicable policies, platform rules, organizational guidelines, and local regulations.
+---
+
+## Security & Disclaimer
+
+This project is intended for educational, productivity, automation, presentation, and demonstration purposes only.
+
+Users are responsible for ensuring that their use of this software complies with applicable laws, organizational policies, and platform rules.
+
+For reporting security vulnerabilities, please refer to [SECURITY.md](SECURITY.md).
 
 ---
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
 
-Feel free to use, modify, and distribute this project in accordance with the license terms.
+You are free to use, modify, and distribute this project in accordance with the license terms.
 
 ---
 
@@ -278,6 +272,12 @@ Feel free to use, modify, and distribute this project in accordance with the lic
 
 **Kapil Patel**
 
-Cybersecurity Enthusiast | DFIR | Penetration Testing | Automation
+Cybersecurity Enthusiast | Penetration Testing | DFIR | Automation
 
-If you find this project useful, consider giving it a ⭐ on GitHub.
+GitHub: [@scorpiankapil](https://github.com/scorpiankapil)
+
+---
+
+⭐ If you find Exwhyzed Typer Pro useful, consider giving the repository a star!
+
+**Built with Python. Designed for precision.**
