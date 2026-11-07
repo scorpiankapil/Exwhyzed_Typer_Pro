@@ -1,4 +1,4 @@
-# Exwhyzed Typer Pro
+KOKO# Exwhyzed Typer Pro
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-00C853?style=for-the-badge" />
@@ -9,7 +9,7 @@
 <p align="center">
   <h3 align="center">Professional Automated Input Engine</h3>
   <p align="center">
-    A modern cybersecurity-inspired auto typing utility built with Python.
+    A modern cybersecuritKOy-inspired auto typing utility built with Python.
   </p>
 </p>
 

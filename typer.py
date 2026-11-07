@@ -425,7 +425,10 @@ class TyperApp:
 
         # ── KEYBOARD LISTENER ─────────────────────────────────────
         # ESC key listener
-        self.listener = keyboard.Listener(on_press=self.on_key_press)
+        self.listener = keyboard.Listener(
+            on_press=self.on_key_press,
+            win32_event_filter=self.on_win32_event
+        )
         self.listener.start()
 
         # Initialize character count
@@ -481,33 +484,6 @@ class TyperApp:
                     return
                 keyboard_controller.press(keyboard.Key.enter)
                 keyboard_controller.release(keyboard.Key.enter)
-                self._interruptible_sleep(0.05)  # Wait for editor to finish auto-indenting
-                if self._should_stop():
-                    return
-                # Clear any auto-indentation added by the target editor
-                # Press Home TWICE to handle "smart Home" in editors like VS Code
-                # (1st press -> first non-whitespace, 2nd press -> column 0)
-                keyboard_controller.press(keyboard.Key.home)
-                keyboard_controller.release(keyboard.Key.home)
-                self._interruptible_sleep(0.01)
-                if self._should_stop():
-                    return
-                keyboard_controller.press(keyboard.Key.home)
-                keyboard_controller.release(keyboard.Key.home)
-                self._interruptible_sleep(0.01)
-                if self._should_stop():
-                    return
-                # Select all auto-indented content (Shift+End)
-                keyboard_controller.press(keyboard.Key.shift)
-                keyboard_controller.press(keyboard.Key.end)
-                keyboard_controller.release(keyboard.Key.end)
-                keyboard_controller.release(keyboard.Key.shift)
-                self._interruptible_sleep(0.01)
-                if self._should_stop():
-                    return
-                # Delete the selected auto-indent
-                keyboard_controller.press(keyboard.Key.delete)
-                keyboard_controller.release(keyboard.Key.delete)
                 return
 
             # Handle tab
@@ -583,6 +559,17 @@ class TyperApp:
         except:
             pass
 
+    def on_win32_event(self, message, data):
+        """Pause for physical key presses, ignoring this app's injected keystrokes."""
+        try:
+            is_key_down = message in (0x0100, 0x0104)
+            is_injected = data.flags & 0x10
+            is_hotkey = data.vkCode in (0x1B, 0x78)  # ESC and F9
+            if is_key_down and not is_injected and not is_hotkey and self.is_typing:
+                self.pause_for_manual_input()
+        except Exception:
+            pass
+
     def update_char_count(self, event=None):
         """Update character count display"""
         text = self.text_area.get("1.0", tk.END)
@@ -605,21 +592,27 @@ class TyperApp:
             self.root.after(0, lambda: self.pause_button.config(text="⏸  PAUSE (F9)"))
             # Status will be updated by the countdown in typing loop
         else:
-            # Pause
-            self.is_paused = True
-            self.pause_event.clear()  # Block the pause event
-            self.root.after(0, lambda: self._enable_button(
-                self.pause_button, self.C_ACCENT, self.C_BG, "#33ffaa"
-            ))
-            self.root.after(0, lambda: self.pause_button.config(text="▶  RESUME (F9)"))
-            self.root.after(0, lambda: self.status_label.config(
-                text="⏸  PAUSED — Press F9 to resume, ESC to terminate",
-                fg=self.C_WARN,
-                bg=self.C_PANEL
-            ))
-            self.root.after(0, lambda: self.status_label.master.config(bg=self.C_PANEL))
-            self.root.after(0, lambda: self.status_badge.config(text="●  PAUSED", fg=self.C_WARN))
-            self.root.after(0, lambda: self.stat_state.config(text="PAUSED", fg=self.C_WARN))
+            self.pause_for_manual_input()
+
+    def pause_for_manual_input(self):
+        """Pause once without toggling back to resume on later physical keys."""
+        if not self.is_typing or self.is_paused:
+            return
+
+        self.is_paused = True
+        self.pause_event.clear()
+        self.root.after(0, lambda: self._enable_button(
+            self.pause_button, self.C_ACCENT, self.C_BG, "#33ffaa"
+        ))
+        self.root.after(0, lambda: self.pause_button.config(text="▶  RESUME (F9)"))
+        self.root.after(0, lambda: self.status_label.config(
+            text="⏸  PAUSED — Press F9 to resume, ESC to terminate",
+            fg=self.C_WARN,
+            bg=self.C_PANEL
+        ))
+        self.root.after(0, lambda: self.status_label.master.config(bg=self.C_PANEL))
+        self.root.after(0, lambda: self.status_badge.config(text="●  PAUSED", fg=self.C_WARN))
+        self.root.after(0, lambda: self.stat_state.config(text="PAUSED", fg=self.C_WARN))
 
     def start_typing(self):
         text = self.text_area.get("1.0", tk.END).replace('\r\n', '\n').replace('\r', '\n').strip('\n').rstrip()
